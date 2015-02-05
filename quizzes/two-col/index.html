@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="http://www.tampabay.com/iwov-resources/style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Bevan%7CFrancois+One&subset=latin,latin">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+	<!-- Facebook Javascript SDK -->
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : 'your-app-id',
+				xfbml      : true,
+				version    : 'v2.1'
+			});
+		};
+
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- start of actual quiz -->
+	<div class="loading">
+		<img src="http://www.tampabay.com/specials/2015/quiz-generator/quizzes/loading.gif" alt="" draggable="false" style="margin:0 auto;">
+		<p style="font-family:'Helvetica', sans-serif; text-align:center;">Loading...</p>
+	</div>
+	<div id="title">
+		<h1 id="question"></h1>
+		<div id="description"></div>
+	</div>
+	<div id="ruler"></div>
+	<div id="responsive-list"><p id="question-counter"></p></div>
+	<div id="this-question"></div>
+	<div id="answer"></div>
+	<script type="text/javascript" src="http://www.tampabay.com/specials/2014/graphics/miso.ds.deps.min.0.4.0.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

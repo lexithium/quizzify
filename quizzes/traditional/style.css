@@ -1,0 +1,157 @@
+body {
+	width:97%;
+	margin:0 auto !important;
+}
+
+#ruler {
+	position:relative;
+	height:4px;
+	background-color:rgb(80,162,145);
+	width:100%;
+}
+
+#title {
+	background-color:white;
+	margin:0 0 40px 0;
+	font-size:1.2em;
+	line-height: 1.35em;
+}
+
+#quiz-head {
+	margin-bottom:15px;
+}
+
+#responsive-list {
+	width:80%;
+	position: relative;
+	text-align:right;
+	margin:40px auto 0 auto;
+	color:rgb(200,200,200);
+}
+
+#question-counter {
+	margin-bottom:0;
+	display:inline;
+	font-family: "Helvetica",sans-serif;
+}
+
+.question-boxes {
+	width:10px;
+	height:10px;
+	background-color:rgb(200,200,200);
+	margin:0 0 0 10px;
+	display:inline-block;
+}
+
+#this-question {
+	max-width:500px;
+	width:80%;
+	margin:15px auto 0 auto;
+	position:relative;
+}
+
+#next-button, #submit-button, #finish-button {
+	border:none;
+	text-shadow:none;
+	color:white;
+	padding:5px 10px;
+	border-radius:3px;
+	margin-top:10px;
+	margin-bottom:40px;
+	float:right;
+}
+
+#submit-button, #finish-button {
+	margin-bottom:0;
+}
+
+#this-question h2, #answer h2 {
+	margin-bottom:15px;
+	text-transform: none;
+	font-size:1.4em;
+}
+
+#this-question img, #answer img {
+	position:relative;
+	width:100%;
+	height:auto;
+	border:none;
+}
+
+#answer img {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+#this-question input[type="radio"] {
+	margin-top:15px;
+	margin-right: 10px;
+}
+#this-question label {
+	font-family: 'Georgia', serif;
+	font-size:1.2em;
+	line-height: 1.35em;
+}
+
+.image-source {
+	margin-top:5px;
+	text-align:right;
+	color:rgb(150,150,150);
+	font-size:0.75em;
+	font-family: "Helvetica",sans-serif;
+}
+
+#answer-sources {
+	margin-top:5px;
+	text-align:left;
+	color:rgb(150,150,150);
+	font-size:0.75em;
+	font-family: "Helvetica", sans-serif;
+	line-height: 1.25em;
+}
+
+#answer {
+	width:40%;
+	background-color: #fff;
+	border: 1px solid rgb(200,200,200);
+	position:absolute;
+	top:12%;
+	left:30%;
+	box-shadow:0 0 7px 0px rgba(0,0,0,0.15);
+	padding:0 0 20px 0;
+	border-radius:5px;
+	display:none;
+}
+
+.explain {
+	margin-top:0px;
+	font-size:1.2em;
+}
+
+#answer h2, #answer button, #answer p  {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#answer button {
+	float: right;
+}
+
+
+/* Media Queries!*/
+@media only screen and (max-width:650px) {
+	body {
+		width:95%;
+	}
+	#answer {
+		width:80%;
+		left:10%;
+		top:25%;
+	}
+	#this-question button {
+		margin-top:0;
+	}
+	#responsive-list {
+		margin-top:15px;
+	}
+}

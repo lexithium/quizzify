@@ -1,0 +1,75 @@
+@import "../../css/top-nav", "../../css/floats", "../../css/times-fonts", "../../css/times-colors", "../../css/widths", "../../css/positioning";
+
+h1 {
+	margin: 0;
+	padding-top:80px;
+	font-family: $bevan;
+	text-transform:none;
+	small {
+		font-family: $helv;
+	}
+}
+p, li {
+	font-size:1.2em;
+}
+.row {
+	padding:30px 0;
+	margin:0 20px;
+}
+#make-quiz {
+	margin-top:0;
+	h4 {
+		text-transform: uppercase;
+		font-family: $francois;
+	}
+	label {
+		margin-right:20px;
+	}
+	@media screen and (max-width:750px) {
+		margin-top:0;
+	}
+}
+.big-text {
+	position:relative;
+	width:100%;
+	max-width:500px;
+}
+.inactive-col {
+	color:#ddd;
+}
+.numbers {
+	text-align:center;
+	font-size:3.5em;
+	font-family: $francois;
+	border-right:1px solid #ddd;
+	@media screen and (max-width:750px) {
+		border-right:none;
+		background-color:#eee;
+		margin-bottom:20px;
+	}
+}
+label[for="times-green"] {
+	color:$green;
+}
+label[for="times-red"] {
+	color:$red;
+}
+label[for="times-blue"] {
+	color:$blue;
+}
+#quizzify {
+	float:right;
+}
+#quizzify-result {
+	clear:both;
+	width:100%;
+	margin:60px 0;
+	height:150px;
+	background-color:#eee;
+	padding:7px;
+	resize:none;
+}
+.required:after {
+	content:"*";
+	color:red;
+}

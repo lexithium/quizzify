@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>Quizzify: A quiz generator from the Tampa Bay Times</title>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Bevan%7CFrancois+One&subset=latin,latin">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+	<div class="masthead">
+		<a href="http://www.tampabay.com" target="_blank"><img class="logo" src="http://www.tampabay.com/specials/2014/graphics/tampabaytimes-white.png" alt="" draggable="false"/></a>
+	</div>
+	<div class="container">
+		<h1>Quizzify <small>a quiz generator</small></h1>
+		<p>Welcome! This generator will help you create an embeddable and responsive quiz. Need help? Consult the documentation!</p>
+		<a class="btn btn-primary" href="https://docs.google.com/spreadsheets/d/1wAxAdxNIUCYNFlfeFwcRVy3iia4SzTCuVifrSuUX3Vo/edit?usp=sharing" target="_blank">User Choice-Based Template</a>
+		<a class="btn btn-primary" href="https://docs.google.com/spreadsheets/d/1Z0eXp1NO2dp42Lb7IUizF7ptXFFnE53gyNyd39S3m8I/edit?usp=sharing" target="_blank">Traditional Quiz Template</a>
+		<div id="make-quiz">
+			<div class="row alert-container"></div>
+			<div class="row">
+				<div class="col-sm-1 numbers">
+					1
+				</div>
+				<div class="col-sm-11">
+					<h4 class="required">Google Spreadsheet URL</h4>
+					<p><em>Make sure you've published the spreadsheet to the web. For instructions on how to do that, view the generator's documentation.</em></p>
+					<input class="big-text" type="text" id="sheetUrl" name="sheetUrl" minlength="1" autocomplete="on" placeholder="Paste spreadsheet URL here"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1 numbers">
+					2
+				</div>
+				<div class="col-sm-11">
+					<h4>Hide Quiz Title (optional)</h4>
+					<p>If you're embedding this quiz, you might not want the title visible. But you should still have one so the share tools can pick it up. Click here if you want to hide it.</p>
+					<input style="margin-top:20px;" type="radio" name="hideTitle" id="hideTitle"/>&nbsp;&nbsp;<label for="hideTitle">Hide title</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1 numbers">
+					3
+				</div>
+				<div class="col-sm-11">
+					<h4 class="required">Type of Quiz</h4>
+					<form>
+						<input type="radio" name="quiztype" id="traditional"/>&nbsp;&nbsp;<label for="traditional">Traditional</label>
+						<input type="radio" name="quiztype" id="choicebased"/>&nbsp;&nbsp;<label for="choicebased">User choice-based</label>
+					</form>
+				</div>
+			</div>
+			<div class="row inactive-col" id="col-num">
+				<div class="col-sm-1 numbers">
+					4
+				</div>
+				<div class="col-sm-11">
+					<h4 class="columnHead">Number of Columns</h4>
+					<p>Only applicable for user choice-based quizzes.</p>
+					<input type="radio" name="colnums" id="twocol" disabled/>&nbsp;&nbsp;<label for="twocol">2-column layout</label>
+					<input type="radio" name="colnums" id="threecol" disabled/>&nbsp;&nbsp;<label for="threecol">3-column layout</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-1 numbers">
+					5
+				</div>
+				<div class="col-sm-11">
+					<h4>Background Image (optional)</h4>
+					<p>If left blank, the quiz will default to a white background.</p>
+					<input class="big-text" type="text" id="bgUrl" name="bgUrl" autocomplete="on" placeholder="Paste URL to background image here"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1 numbers">
+					6
+				</div>
+				<div class="col-sm-11">
+					<h4 class="required">Primary color</h4>
+					<form>
+						<input type="radio" name="prim-color" id="times-green" value="50A291"/>&nbsp;&nbsp;<label for="times-green">Green</label>
+						<input type="radio" name="prim-color" id="times-red" value="DD634B"/>&nbsp;&nbsp;<label for="times-red">Red</label>
+						<input type="radio" name="prim-color" id="times-blue" value="00A0DB"/>&nbsp;&nbsp;<label for="times-blue">Blue</label>
+						<input type="radio" name="prim-color" id="other-color"/>&nbsp;&nbsp;<input type="text" name="prim-color" id="hex-color" autocomplete="on" maxlength="6" minlength="6" placeholder="ee116d" size="6"/>
+					</form>
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="col-sm-1 numbers">
+					7
+				</div>
+				<div class="col-sm-11">
+					<h4>Fonts</h4>
+					<label for="prim-font-choice">Primary font choice</label><br>
+					<select name="prim-font-choice">
+						<option value="francois">Francois One</option>
+						<option value="bevan">Bevan</option>
+						<option value="helvetica">Helvetica</option>
+					</select><br><br>
+					<label for="sec-font-choice">Secondary font choice</label><br>
+					<select name="sec-font-choice">
+						<option value="georgia">Georgia</option>
+						<option value="Helvetica">Helvetica</option>
+					</select>
+				</div>
+			</div> -->
+			<div class="row">
+				<div class="col-sm-1 numbers">
+					7
+				</div>
+				<div class="col-sm-11">
+					<h4>Link for share tools</h4>
+					<p>This is what the share tools will link to. If left blank, this will default to the quiz's URL.</p>
+					<input class="big-text" type="text" name="shareUrl" id="shareUrl" autocomplete="on" minlength="1" placeholder="Paste URL for sharing purposes here"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1 numbers">
+					8
+				</div>
+				<div class="col-sm-11">
+					<h4 class="required">Select your output</h4>
+					<p>Choose <strong>embed code</strong> if you want an iframe or <strong>static page</strong> if you want a URL.</p>
+					<form>
+						<input type="radio" name="output-type" id="embedcode"/>&nbsp;&nbsp;<label for="embedcode">Embed code</label>
+						<input type="radio" name="output-type" id="staticpage"/>&nbsp;&nbsp;<label for="staticpage">Static page</label>
+					</form>
+				</div>
+			</div>
+			<div class="row inactive-col" id="height-width">
+				<div class="col-sm-1 numbers">
+					9
+				</div>
+				<div class="col-sm-11">
+					<h4 class="embedHead">Height and Width</h4>
+					<p>Only applicable if chosen output is <strong>embed code</strong>.</p>
+					<strong>Width:</strong>&nbsp;&nbsp;<input type="text" name="width-param" id="userWidth" autocomplete="on" minlength="1" value="100%" size="7" disabled/>
+					<strong>Height:</strong>&nbsp;&nbsp;<input type="text" name="height-param" id="userHeight" autocomplete="on" minlength="1" value="1000px" size="10" disabled/>
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="col-sm-1 numbers">
+					9
+				</div>
+				<div class="col-sm-11">
+					<h4>Alternate Logo URL (optional)</h4>
+					<p>If left blank, this will default to the <em>Tampa Bay Times</em> logo. This is only applicable for static pages.</p>
+					<input class="big-text" type="text" name="logoUrl" id="logoUrl" autocomplete="on" placeholder="Paste alternate logo URL here"/>
+				</div>
+			</div> -->
+		</div>
+		<button type="button" class="btn btn-primary" id="quizzify">Submit</button>
+		<textarea readonly="readonly" id="quizzify-result" placeholder="Your output will appear here."></textarea>
+	</div>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
