@@ -2,6 +2,10 @@
 
 This is a quiz generator tool built for the Tampa Bay Times. It will help you create an embeddable and responsive quiz that is based off a Google Spreadsheet.
 
+## In action
+
+[Here's the quiz generator in action on the Tampa Bay Times server.](http://tbtim.es/quizgenerator)
+
 ## Examples
 
 There are two types of quizzes you can build using this tool:
