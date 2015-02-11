@@ -2,6 +2,22 @@
 
 This is a quiz generator tool built for the Tampa Bay Times. It will help you create an embeddable and responsive quiz that is based off a Google Spreadsheet.
 
+## Contents
+
+- [Quizzify in action](#in-action)
+- [Examples](#examples)
+- [Documentation](#documentation)
+    - [Step 1](#step-1)
+    - [Step 2](#step-2)
+    - [Step 3](#step-3)
+    - [Step 4](#step-4)
+- [Migrating Quizzify to your own server](#migrating-quizzify-to-your-own-server)
+- [How to fill out the quiz templates](#how-to-fill-out-the-quiz-templates)
+    - [Traditional Quiz Template](#traditional-quiz-template)
+    - [User Choice-Based Quiz Template](#user-choice-based-quiz-template)
+- [Dependencies](#dependencies)
+- [Credits](#credits)
+
 ## In action
 
 [Here's the quiz generator in action on the Tampa Bay Times server.](http://tbtim.es/quizgenerator)
@@ -54,7 +70,41 @@ Once you hit submit, the text area at the bottom of the page will return either 
 
 ## Migrating Quizzify to your own server
 
-To migrate Quizzify to your own server, you'll need to adjust three lines of code.
+To migrate Quizzify to your own server, you'll need to adjust a few things.
+
+1. In **js/script.js**, change the `BASE_URL` variables to match your domain 96, 99 and 101:
+
+    Line 96:
+
+    ```javascript
+    var BASE_URL = 'http://www.your-domain.com/path/to/quizzify/quizzes/traditional/';
+    ```
+
+    Line 99:
+
+    ```javascript
+    var BASE_URL = 'http://www.your-domain.com/path/to/quizzify/quizzes/two-col/';
+    ```
+
+    Line 101:
+
+    ```javascript
+    var BASE_URL = 'http://www.your-domain.com/path/to/quizzify/quizzes/three-col/';
+    ```
+
+2. In order to use Facebook's SDK (and access their share tools), you'll need to connect Quizzify to an app ID. [You can create a new app and generate an app ID here](https://developers.facebook.com/apps).
+
+    You'll need to paste your shiny new app id into the **index.html** files for each of the quiz types (`two-col`, `three-col` and `traditional`). You'll see something like this at the top of the body:
+
+    ```javascript
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : 'your-app-id',
+            xfbml      : true,
+            version    : 'v2.1'
+        });
+    };
+    ```
 
 ## How to fill out the quiz templates
 
