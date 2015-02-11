@@ -84,7 +84,7 @@ function releaseOutput(noErrors) {
 	if(noErrors === true) {
 		console.log('no errors');
 		//get sheet id param
-		var sheetId = '?id=' + $('#sheetUrl').val().slice($('#sheetUrl').val().indexOf('/d/')+3, $('#sheetUrl').val().indexOf('/edit'));
+		var sheetId = '?id=' + $('#sheetUrl').val().slice($('#sheetUrl').val().indexOf('/d/')+3, $('#sheetUrl').val().indexOf('/', $('#sheetUrl').val().indexOf('/d/')+3));
 		//check if they want to hide the title and make param
 		if($('#hideTitle').is(':checked')) {
 			var title = "&hide=yes";

@@ -52,6 +52,10 @@ Go through and fill out the rest of the options to produce your desired quiz.
 
 Once you hit submit, the text area at the bottom of the page will return either an iframe or a URL depending on your choice of output in Number 8.
 
+## Migrating Quizzify to your own server
+
+To migrate Quizzify to your own server, you'll need to adjust three lines of code.
+
 ## How to fill out the quiz templates
 
 The quiz template is very finnicky. If your quiz is not loading, chances are you've messed up something on the quiz template. So here are some instructions to help you do it right.
