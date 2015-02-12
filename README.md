@@ -72,7 +72,7 @@ Once you hit submit, the text area at the bottom of the page will return either 
 
 To migrate Quizzify to your own server, you'll need to adjust a few things.
 
-1. In **js/script.js**, change the `BASE_URL` variables to match your domain 96, 99 and 101:
+1. In **js/script.js**, change the `BASE_URL` variables to match your domain.
 
     Line 96:
 
