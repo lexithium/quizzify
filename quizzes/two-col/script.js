@@ -23,7 +23,7 @@ if(getQueryVariable('bg') !== false) {
 var quizColor = '#' + getQueryVariable('color');
 $('#ruler').css({backgroundColor: quizColor});
 if(getQueryVariable('share') === false) {
-	var shareUrl = document.URL;
+	var shareUrl = (window.parent.location.href !== document.URL) ? window.parent.location.href : document.URL;
 } else {
 	var shareUrl = getQueryVariable('share');
 }
@@ -158,7 +158,7 @@ ds.fetch({
 			$('#this-question').fadeTo(200,0.1);
 			$('.thumbnail').unbind('click');
 			$('.thumbnail').css({backgroundColor:'rgb(245,245,245)', color: '#000', boxShadow: 'none'});
-			$('#answer').html('<h2>You got: ' + youGot + '. </h2>' +
+			$('#answer').html('<h2>You got: ' + youGot + '</h2>' +
 				'<img id="result-image" src="' + ds.column(youGot).data[0] + '" alt="" draggable="false">' +
 				'<div>' + ds.column(youGot).data[1]); + '</div>';
 			if(ds.column(youGot).data[2] !== null) {
@@ -173,10 +173,10 @@ ds.fetch({
 			$('#fb-share').click(function() {
 				$('#answer').append('<script>FB.ui({' +
 					'method: "feed",' +
-					'link: "http://www.alexisnsanchez.com",' +
+					'link: "' + shareUrl + '",' +
 					'picture: "' + ds.column(youGot).data[0].toString() + '",' +
-					'name: "I got ' + youGot + '. ' + questionAsked + '",' +
-					'description: "' + ds.column(youGot).data[2].toString() + '"' +
+					'name: "I got ' + youGot + '. ' + questionAsked.replace('"', '') + '",' +
+					'description: "' + ds.column(youGot).data[2].toString().replace('"', '') + '"' +
 					'}, function(response){});</script>');
 			});
 		}
